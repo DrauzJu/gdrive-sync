@@ -1,0 +1,23 @@
+{
+  "name": "gdrive-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrauzJu/gdrive-sync.git"
+  },
+  "author": "DrauzJu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrauzJu/gdrive-sync/issues"
+  },
+  "homepage": "https://github.com/DrauzJu/gdrive-sync#readme",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "googleapis": "^35.0.0"
+  }
+}
