@@ -1,21 +1,27 @@
-const Runner = require("./Runner/Runner.js");
-const {version} = require("./package.json");
+const Runner = require("./lib/Runner.js");
+const version = require("./package.json").version;
 
-const ArgParser = require("argparse").ArgumentParser;
+const ArgumentParser = require('argparse').ArgumentParser;
+const path = require('path');
 
-const parser = new ArgParser({
+const parser = new ArgumentParser({
   version,
   addHelp: true,
   description: "A Google Drive File Sync Tool"
 });
 
-//add (optional) arguments
+//add arguments
 parser.addArgument("--clear-cache", {
-  help: "Cleares the cache before starting the synchronisation",
+  help: "Clears the cache before starting the synchronisation",
   defaultValue: false,
-  dest: clearCache,
-  action: storeTrue
+  dest: "clearCache",
+  action: "storeTrue"
+});
+
+parser.addArgument("--confDir", {
+    help: "Sets the directory where to look for the config files",
+    defaultValue: __dirname + path.sep + "configs"
 });
 
 const runnerInstance = new Runner(parser.parseArgs());
-runnerInstance.run();
+runnerInstance.run().then(() => console.log("Finished syncing"));
