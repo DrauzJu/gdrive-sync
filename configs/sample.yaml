@@ -1,0 +1,6 @@
+remotePath: 'Test'
+localPath: '/home/julian/TestDriveSync'
+direction: downloadOnly
+
+#not supported yet
+deleteLocal: true
