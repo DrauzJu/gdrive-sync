@@ -20,7 +20,7 @@ parser.addArgument("--clear-cache", {
 
 parser.addArgument("--confDir", {
     help: "Sets the directory where to look for the config files",
-    defaultValue: __dirname + path.sep + "configs"
+    defaultValue: path.join(__dirname,"configs")
 });
 
 const runnerInstance = new Runner(parser.parseArgs());
